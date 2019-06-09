@@ -11,10 +11,10 @@
       </div>
       <button type="submit" class="btn btn-outline-secondary btn-sm btn-block">Save changes</button>
     </form>
-    <button action="/manage/delete/media" method="post">
+    <form action="/manage/delete/media" method="post">
       <input type="hidden" name="_id" value="{{this.dbMedia._id}}">
       <button type="submit" class="btn btn-outline-danger btn-sm btn-block">Delete photo</button>
-    </button>
+    </form>
   </div>
 </div>
 <script src='/js/photoview.js'></script>
