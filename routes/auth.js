@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 const cloudinary = require('cloudinary').v2;
-const cloudinaryConfig = require('./../config/cloudinary-config');
 const passport = require('./../config/passport-config');
 const InstagramStrategy = require('./../config/passport-instagram-strategy');
 passport.use(InstagramStrategy);
@@ -64,9 +63,9 @@ router.get('/instagram/callback',
                           let thumbnailCloudId = result.public_id;
                           User.findOne({ username: username })
                             .then((dbuser) => {
-                              Media.create({ standard_resolution: standardResolutionImageUrl, cloudId: standardResolutionCloudId, thumbnail: thumbnailImageUrl, thumbnail_cloudId: thumbnailCloudId, creatorId: dbuser._id, tags })
+                              Media.create({ standard_resolution: standardResolutionImageUrl, cloudId: standardResolutionCloudId, thumbnail: thumbnailImageUrl, thumbnail_cloudId: thumbnailCloudId, creatorId: dbuser._id, tags });
                               Media.create({ standard_resolution: standardResolutionImageUrl, cloudId: standardResolutionCloudId, thumbnail: thumbnailImageUrl, thumbnail_cloudId: thumbnailCloudId, creatorId: dbuser._id })
-                                .then(() => {})
+                                .then(() => { })
                                 .catch((error) => console.log('Error inserting media into the DB', error));
                             })
                             .catch((error) => console.log('Error finding user', error));

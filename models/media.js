@@ -10,10 +10,6 @@ const mediaSchema = new Schema({
   thumbnail: String,
   cloudId: String,
   thumbnail_cloudId: String,
-  /* url: {
-    thumbnail: String,
-    full_size: String
-  }, */
   meta: {
     type: metaSchema
   },

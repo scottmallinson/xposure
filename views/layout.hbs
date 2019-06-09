@@ -4,16 +4,17 @@
 <head>
   <title>
     {{#if title}}
-    {{title}} | xPosure
+    {{title}} | xposure
     {{else}}
-    xPosure
+    xposure
     {{/if}}
   </title>
-  <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel="shortcut icon" type="image/png" href="/favicon.ico">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -21,40 +22,35 @@
 </head>
 
 <body>
-
-{{#if user}}
-<nav class="nav-sm navbar fixed-top navbar-light bg-light">
-  <a class="nav-link active" href="/{{user.username}}"><img src="/images/logo-icon.png" class="icon-logo"></a>
-</nav>
-
-<nav class="nav-lg navbar fixed-top navbar-light bg-light">
-  <div class="wrapper">
+  {{#if user}}
+  <nav class="nav-sm navbar fixed-top navbar-light bg-light">
     <a class="nav-link active" href="/{{user.username}}"><img src="/images/logo-icon.png" class="icon-logo"></a>
-    <a class="nav-item nav-link" href="/{{user.username}}">My Profile<a/>
-    <a class="nav-item nav-link" href="/explore">Explore</a>
-    <a class="nav-item nav-link" href="/upload">Upload</a>
-    <a class="nav-link active" href="/{{user.username}}/favorites">Favourites</a>
-    <a class="nav-item nav-link" href="/logout">Logout</a>
-  </div>
-</nav>
-{{/if}}
-<main class="{{page}}">
-  {{{body}}}
-</main>
-{{#if user}}
-<div class="menu-space"></div>
-<nav class="nav-sm navbar fixed-bottom navbar-light bg-light navbar-mobile">
-      <a class="nav-link active" href="/{{user.username}}"><i class="fas fa-user-circle"></i></a>
-      <a class="nav-link active" href="/{{user.username}}/favorites"><i class="far fa-heart"></i></a>
-      <a class="nav-link active" href="/upload"><i class="fas fa-cloud-upload-alt"></i></a>
-      <a class="nav-link active" href="/explore"><i class="far fa-images"></i></a>
-      <a class="nav-link active" href="/logout"><i class="fas fa-sign-out-alt"></i></a>
-</nav>
-
-
-{{/if}}
+  </nav>
+  <nav class="nav-lg navbar fixed-top navbar-light bg-light">
+    <div class="wrapper">
+      <a class="nav-link active" href="/{{user.username}}"><img src="/images/logo-icon.png" class="icon-logo"></a>
+      <a class="nav-item nav-link" href="/{{user.username}}">My Profile<a />
+        <a class="nav-item nav-link" href="/explore">Explore</a>
+        <a class="nav-item nav-link" href="/upload">Upload</a>
+        <a class="nav-link active" href="/{{user.username}}/favorites">Favourites</a>
+        <a class="nav-item nav-link" href="/logout">Logout</a>
+    </div>
+  </nav>
+  {{/if}}
+  <main class="{{page}}">
+    {{{body}}}
+  </main>
+  {{#if user}}
+  <div class="menu-space"></div>
+  <nav class="nav-sm navbar fixed-bottom navbar-light bg-light navbar-mobile">
+    <a class="nav-link active" href="/{{user.username}}"><i class="fas fa-user-circle"></i></a>
+    <a class="nav-link active" href="/{{user.username}}/favorites"><i class="far fa-heart"></i></a>
+    <a class="nav-link active" href="/upload"><i class="fas fa-cloud-upload-alt"></i></a>
+    <a class="nav-link active" href="/explore"><i class="far fa-images"></i></a>
+    <a class="nav-link active" href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+  </nav>
+  {{/if}}
   <footer></footer>
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

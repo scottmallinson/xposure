@@ -1,7 +1,6 @@
 'use strict';
 
 const likeButton = document.querySelector('.like_btn');
-
 const updateLike = (e) => {
   e.preventDefault();
   axios.patch(`/explore/toggleLike/${e.target.dataset.imageid}`);

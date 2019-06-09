@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const parser = require('./../config/multer');
-const cloudinaryConfig = require('./../config/cloudinary-config');
 const cloudinary = require('cloudinary').v2;
 const bcrypt = require('bcrypt');
 
@@ -36,7 +35,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/' }),
     // Query the users collection and to check username and password
     User.findOne({ username })
       .then((user) => {
-      // > if `username` already exists in the DB, redirect the user to their profile page
+        // > if `username` already exists in the DB, redirect the user to their profile page
         if (user !== null) {
           res.redirect(`/${username}`);
         }
@@ -135,6 +134,7 @@ router.get('/:username', (req, res) => {
   const { username } = req.params;
   User.findOne({ username })
     .then((dbUser) => {
+      console.log('dbUser._id', dbUser._id);
       Media.find({ creatorId: dbUser._id }).sort({ timestamps: -1 })
         .then((mediaByUser) => {
           res.render('mymedia', { mediaByUser, dbUser, user: req.user, title: `${dbUser.username}` });

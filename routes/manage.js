@@ -47,7 +47,7 @@ router.post('/delete/user', ensureAuthenticated, (req, res, next) => {
             cloudinary.v2.uploader.destroy([media[i].cloudId], (error, result) => { console.log(result, error); });
             cloudinary.v2.uploader.destroy([media[i].thumbnail_cloudId], (error, result) => { console.log(result, error); });
             Media.deleteOne({ _id: media[i]._id })
-              .then(() => {})
+              .then(() => { })
               .catch((error) => console.log('Unable to delete media from DB', error));
           };
         })

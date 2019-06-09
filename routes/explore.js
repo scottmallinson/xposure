@@ -53,7 +53,7 @@ router.patch('/toggleLike/:mediaId', ensureAuthenticated, (req, res) => {
         let deletePos = dbUser.likes.indexOf(mediaId);
         dbUser.likes.splice(deletePos, 1);
 
-        Media.updateOne({ _id: mediaId }, { $pull: { likes: { $in: [ dbUser.id ] } } }, { multi: true })
+        Media.updateOne({ _id: mediaId }, { $pull: { likes: { $in: [dbUser.id] } } }, { multi: true })
           .then((media) => {
             res.sendStatus(200);
           })

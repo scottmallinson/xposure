@@ -4,18 +4,17 @@
 <div class="card" style="width: 100%;">
   <img class="card-img-top" src="{{this.dbMedia.standard_resolution}}" alt="Card image cap">
   <div class="card-body">
-  <form action="/manage/edit?_id={{this.dbMedia._id}}" method="post">
-    <div class="form-group">
-      <input type="text" class="form-control" id="description" name="description" placeholder="Enter a description" value="{{this.dbMedia.meta.description}}">
-    </div>
-    <button type="submit" class="btn btn-outline-secondary btn-sm btn-block">Save changes</button>
-  </form>
-  <form action="/manage/delete/media" method="post">
-    <input type="hidden" name="_id" value="{{this.dbMedia._id}}">
-    <button type="submit" class="btn btn-outline-danger btn-sm btn-block">Delete photo</button>
-  </form>
+    <form action="/manage/edit?_id={{this.dbMedia._id}}" method="post">
+      <div class="form-group">
+        <input type="text" class="form-control" id="description" name="description" placeholder="Enter a description"
+          value="{{this.dbMedia.meta.description}}">
+      </div>
+      <button type="submit" class="btn btn-outline-secondary btn-sm btn-block">Save changes</button>
+    </form>
+    <button action="/manage/delete/media" method="post">
+      <input type="hidden" name="_id" value="{{this.dbMedia._id}}">
+      <button type="submit" class="btn btn-outline-danger btn-sm btn-block">Delete photo</button>
+    </button>
   </div>
 </div>
-
 <script src='/js/photoview.js'></script>
-
