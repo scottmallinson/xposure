@@ -65,6 +65,7 @@ router.get('/instagram/callback',
                           User.findOne({ username: username })
                             .then((dbuser) => {
                               Media.create({ standard_resolution: standardResolutionImageUrl, cloudId: standardResolutionCloudId, thumbnail: thumbnailImageUrl, thumbnail_cloudId: thumbnailCloudId, creatorId: dbuser._id, tags })
+                              Media.create({ standard_resolution: standardResolutionImageUrl, cloudId: standardResolutionCloudId, thumbnail: thumbnailImageUrl, thumbnail_cloudId: thumbnailCloudId, creatorId: dbuser._id })
                                 .then(() => {})
                                 .catch((error) => console.log('Error inserting media into the DB', error));
                             })
