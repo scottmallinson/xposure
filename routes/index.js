@@ -134,7 +134,6 @@ router.get('/:username', (req, res) => {
   const { username } = req.params;
   User.findOne({ username })
     .then((dbUser) => {
-      console.log('dbUser._id', dbUser._id);
       Media.find({ creatorId: dbUser._id }).sort({ timestamps: -1 })
         .then((mediaByUser) => {
           res.render('mymedia', { mediaByUser, dbUser, user: req.user, title: `${dbUser.username}` });

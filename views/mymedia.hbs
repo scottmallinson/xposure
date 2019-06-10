@@ -4,11 +4,6 @@
     <div class="line-breaks">{{ dbUser.bio }}</div>
     <a href="{{ dbUser.homePage }}" target="_blank" rel="noopener">{{ dbUser.homePage }}</a>
   </div>
-  <div class="picture-area">
-    <div>
-      <img src="{{dbUser.image}}" class="rounded-circle profile-pic" alt="{{dbUser.image}}">
-    </div>
-  </div>
 </div>
 <form action="/manage/profile" method="get">
   <button type="submit" class="btn btn-outline-secondary btn-sm btn-block">Edit profile</button>
