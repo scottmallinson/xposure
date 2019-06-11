@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 const cloudinary = require('cloudinary').v2;
+const cloudinaryConfig = require('./../config/cloudinary-config');
 const passport = require('./../config/passport-config');
 const InstagramStrategy = require('./../config/passport-instagram-strategy');
 passport.use(InstagramStrategy);

@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const parser = require('./../config/multer');
+const cloudinaryConfig = require('./../config/cloudinary-config');
 const cloudinary = require('cloudinary').v2;
 const bcrypt = require('bcrypt');
 

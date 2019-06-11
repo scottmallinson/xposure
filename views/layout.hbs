@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="manifest" href="/images/manifest.json">
   <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#000000">
   <meta name="apple-mobile-web-app-title" content="xposure">
   <meta name="application-name" content="xposure">
@@ -32,24 +32,22 @@
 
 <body>
   {{#if user}}
-  <div class="container">
-    <nav class="nav-sm navbar fixed-top navbar-light bg-light">
-      <a class="navbar-brand" href="/{{user.username}}"><img src="/images/xposure.svg" width="50" height="50"
-          alt="xposure"></a>
-    </nav>
-  </div>
-  <div class="container">
-    <nav class="nav-lg navbar fixed-top navbar-light bg-light">
-      <a class="navbar-brand" href="/{{user.username}}">
-        <img src="/images/xposure.svg" width="50" height="50" alt="xposure">
-      </a>
-      <a class="nav-item nav-link" href="/{{user.username}}">My Profile<a />
-        <a class="nav-item nav-link" href="/explore">Explore</a>
-        <a class="nav-item nav-link" href="/upload">Upload</a>
-        <a class="nav-link active" href="/{{user.username}}/favorites">Favourites</a>
-        <a class="nav-item nav-link" href="/logout">Logout</a>
-    </nav>
-  </div>
+  <nav class="nav-sm navbar fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="/{{user.username}}"><img src="/images/xposure.svg" width="50" height="50"
+        alt="xposure"></a>
+  </nav>
+  <nav class="nav-lg navbar fixed-top navbar-light bg-light">
+    <div class="wrapper">
+    <a class="navbar-brand" href="/{{user.username}}">
+      <img src="/images/xposure.svg" width="50" height="50" alt="xposure">
+    </a>
+    <a class="nav-item nav-link" href="/{{user.username}}">My Profile<a />
+      <a class="nav-item nav-link" href="/explore">Explore</a>
+      <a class="nav-item nav-link" href="/upload">Upload</a>
+      <a class="nav-link active" href="/{{user.username}}/favorites">Favourites</a>
+      <a class="nav-item nav-link" href="/logout">Logout</a>
+      </div>
+  </nav>
   {{/if}}
   <main class="{{page}}">
     {{{body}}}
